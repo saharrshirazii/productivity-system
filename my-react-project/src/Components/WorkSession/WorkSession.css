@@ -1,0 +1,392 @@
+.card-wrapper {
+  margin-bottom: 1.5rem !important; 
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Säkerställ gaps mellan cards */
+.session-start-container > .card-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+/* Tailwind-säker gaps */
+.session-start-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h3 {
+  color: var(--color-text);
+}
+
+.main-title,
+.subtitle {
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* MODE BUTTONS */
+.modes{
+display: flex;
+gap: 0.75rem;
+margin: 1rem 0;
+width: 100%;
+}
+.mode-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px solid var(--color-border-muted);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.mode-btn .mode-title {
+  font-size: 1rem;  
+  font-weight: 600;    
+  color: var(--color-text);     
+}
+.sub-title{
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+.mode-btn.selected {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.mode-btn.selected .mode-title,
+.mode-btn.selected .sub-title {
+  color: white;
+}
+/* CONTAINERS */
+.session-start-container {
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 450;
+  color: var(--color-text);
+  font-size: 1rem;
+  text-align: left;
+}
+
+.text-input {
+  padding: 0.9rem 1.1rem;
+  font-size: 1.05rem;
+  border: 1px solid var(--color-border-muted);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  color: var(--color-text);
+  transition: border-color 0.2s;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.theme-toggle-dark .text-input {
+  background: var(--color-bg);
+  border-color: var(--color-border-muted);
+}
+
+.theme-toggle-dark .text-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+ /* FOCUS BUTTONS */
+.focus-mode-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.focus-btn {
+  flex: 1 1 0;
+  min-width: 150px; 
+  max-width: 200px;
+  padding: 0.7rem 0.3rem;
+  border: 2px solid var(--color-border-muted);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transition: all 0.15s;
+}
+
+.focus-btn .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+.focus-btn .label {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  font-weight: bold;
+}
+.focus-btn .minutes {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* LÅS KORTEN VID TIMERN */
+.locked {
+  pointer-events: none;  
+  opacity: 0.5;          
+}
+
+
+/* Text nedtoning */
+.dimmed {
+  opacity: 0.6;
+}
+
+/* Aktiv fokusläge, visuell indikation styling */
+.timer-overlay {
+  background-color: rgba(26, 27, 45, 0.9); 
+  border-radius: var(--radius-md);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;   
+}
+
+.running-indicator {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  background-color: rgba(3, 3, 3, 0.8);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle-dark .timer-overlay {
+  background-color: rgba(45, 46, 69, 0.9);
+}
+
+.theme-toggle-dark .running-indicator {
+  background-color: rgba(232, 232, 232, 0.924);
+  color: rgba(45, 46, 69, 0.9);
+}
+
+ /*FÄRGER PÅ FOKUS KNAPPARNA*/
+
+.focus-btn.selected:nth-child(1){ 
+  border-color: var(--color-orange); 
+  background-color: rgba(255, 155, 73, 0.1);
+}
+.focus-btn.selected:nth-child(1) .label,
+.focus-btn.selected:nth-child(1) .minutes {
+  color: var(--color-orange);
+}
+
+.focus-btn.selected:nth-child(2){ 
+  border-color: var(--color-blue); 
+  background-color: rgba(42, 127, 255, 0.1);
+}
+.focus-btn.selected:nth-child(2) .label,
+.focus-btn.selected:nth-child(2) .minutes {
+  color: var(--color-blue);
+}
+
+.focus-btn.selected:nth-child(3){ 
+  border-color: var(--color-green); 
+  background-color: rgba(109, 209, 140, 0.1);
+}
+.focus-btn.selected:nth-child(3) .label,
+.focus-btn.selected:nth-child(3) .minutes {
+  color: var(--color-green);
+}
+
+.focus-btn.selected:nth-child(4){ 
+  border-color: var(--color-gray); 
+  background-color: rgba(144, 150, 163, 0.1);
+}
+.focus-btn.selected:nth-child(4) .label,
+.focus-btn.selected:nth-child(4) .minutes {
+  color: var(--color-gray);
+}
+
+
+/* Container för knappar längst ner */
+.timer-buttons-bottom {
+  display: flex;
+  justify-content: center; 
+  gap: 1rem; 
+  margin-top: 2rem;
+  flex-wrap: wrap; 
+}
+
+/* Knapp stilen för all timer knappar*/
+.timer-buttons-bottom button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.timer-buttons-bottom button:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+.startBtn, .resumeBtn{
+  background-color: var(--color-accent);
+  color: white;
+}
+.pausBtn{
+  background-color: var(--color-bg-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-muted);
+}
+.stopBtn{
+  background-color: #dc2626;
+  color: white;
+}
+
+.theme-toggle-dark .pausBtn {
+  background-color: var(--color-bg);
+  border-color: var(--color-border-muted);
+}
+
+
+/* Tooltip under knapparna */
+.form-tooltip {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;         
+  border-radius: var(--radius-sm);              
+  box-shadow: var(--shadow-sm); 
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.theme-toggle-dark .form-tooltip {
+  background-color: rgba(220, 38, 38, 0.2);
+  border-color: rgba(220, 38, 38, 0.3);
+  color: white;
+}
+
+
+.form-tooltip::before {
+  content: "⚠️";
+  font-size: 1.5rem;
+}
+
+/* Enkel fadeIn animation tooltipen */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+@media (max-width: 600px) {
+  .session-start-container {
+    max-width: 98vw;
+    margin: 0.5rem auto;
+    padding: 0.7rem;
+  }
+  .focus-mode-buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .focus-btn {
+    flex: 1 1 45%;
+    min-width: 45%;
+    max-width: 48%;
+    margin-bottom: 0.5rem;
+    padding: 0.7rem 0.2rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+  .modes {
+    gap: 0.5rem;
+  }
+  .mode-btn {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.98rem;
+  }
+
+   .timer-buttons-bottom {
+    flex-direction: column; 
+    gap: 0.75rem;
+    align-items: stretch; 
+  }
+
+  .timer-buttons-bottom button {
+    width: 100%; 
+    text-align: center;
+  }
+}
+
+/* Format time */
+
+.session-time-status {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background: var(--color-card-inner-bg); /* Use your existing variable */
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--color-border);
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-block span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.time-block strong {
+  font-size: 1.2rem;
+  color: var(--color-text-main);
+}

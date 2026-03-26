@@ -1,0 +1,226 @@
+.analysis-container {
+  padding: var(--space-lg);
+  padding-bottom: 100px; /* För space ovanför bottom nav */
+  min-height: 100vh;
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.title-section h1 {
+  font-size: var(--font-size-xxl);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.title-section p {
+  margin: var(--space-xs) 0 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* --- PRODUCTIVITY SCORE CARD --- */
+.productivity-card-layout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl); /* Matchar dina tidigare 30px */
+}
+
+.productivity-card-scorecircle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--space-sm);
+}
+
+/* Dark Mode specifik styling för cirkeln */
+.productivity-card-scorecircle.dark { 
+  background: #1e1b4b; /* Behåller din specifika mörka färg */
+  border: 4px solid #7c3aed; 
+}
+
+/* Light Mode specifik styling för cirkeln */
+.productivity-card-scorecircle.light { 
+  background: var(--color-bg-surface); 
+  border: 4px solid #a78bfa; 
+}
+
+.score-number { 
+  font-size: var(--font-size-xxl); /* 32px-36px beroende på variabel */
+  font-weight: 800; 
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.score-label { 
+  font-size: var(--font-size-xs); 
+  text-transform: uppercase; 
+  color: var(--color-text-muted);
+}
+
+.score-features {
+  display: flex;
+  gap: var(--space-lg); /* Matchar dina tidigare 20px */
+}
+
+.features-label-shortnote {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* STATS CARDS GRID */
+.analsysis-small-cards-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.small-card-inner-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.small-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.small-card-header h2 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.small-card-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.small-card-label {
+  font-size: var(--font-size-xs);
+  margin: calc(var(--space-xs) * -1) 0 0 0; 
+  color: var(--color-text-muted);
+}
+
+/* --- HÄR ÄR DINA IKON-BOXAR (Behållna färger) --- */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm); /* Använder din variabel för rundade hörn */
+  flex-shrink: 0;
+}
+
+.icon-box.blue {
+  background-color: #dbeafe;
+  color: #3b82f6;
+}
+
+.icon-box.green {
+  background-color: #d1fae5;
+  color: #10b981;
+}
+
+.icon-box.purple {
+  background-color: #ede9fe;
+  color: #a855f7;
+}
+
+.icon-box.orange {
+  background-color: #ffedd5;
+  color: #f97316;
+}
+
+/* --- GRAFER OCH GRID --- */
+.chart-card-weekly-pattern {
+  margin-top: var(--space-xxl);
+}
+
+.analysis-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+/* --- INSIKTER --- */
+.insight-wrapper {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.insight-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--color-text);
+}
+
+.insights-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.insights-list li {
+  color: var(--color-text);
+}
+
+.insight-list-text-icon {
+  display: flex;
+  align-items: center; 
+  gap: var(--space-sm);      
+  padding-top: var(--space-md);     
+}
+
+/* --- RESPONSIVITET --- */
+@media (max-width: 1024px) {
+  .analsysis-small-cards-stats {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 900px) {
+  .analysis-charts-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 600px) {
+  .analsysis-small-cards-stats {
+    grid-template-columns: 1fr; 
+    gap: var(--space-md); 
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stapla cirkeln och texten på höjden */
+  .productivity-card-layout {
+    flex-direction: column;
+    align-items: center; /* Centrerar cirkeln */
+    text-align: center;   /* Centrerar all text under cirkeln */
+    gap: var(--space-lg);
+  }
+}
